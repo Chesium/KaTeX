@@ -1,5 +1,7 @@
 /* stylelint-disable font-family-no-missing-generic-family-keyword */
 @import "fonts.less";
+@import "dspace.less";
+@import "vg.css";
 
 // The mu unit is defined as 1/18 em
 @mu: (1em / 18);
@@ -183,7 +185,7 @@
     .vlist {
         display: table-cell;
         vertical-align: bottom;
-        position: relative;
+        // position: relative;
 
         > span {
             display: block;
@@ -569,6 +571,11 @@
 
     .boxpad {
         padding: 0 0.3em;              // \fboxsep = 3pt
+    }
+
+    .vbox{
+        box-sizing: border-box;
+        // border: 0.04em solid;         // \fboxrule = 0.4pt
     }
 
     .fbox,

@@ -53,3 +53,5 @@ import "./functions/text";
 import "./functions/underline";
 import "./functions/vcenter";
 import "./functions/verb";
+
+import "./functions/vg";

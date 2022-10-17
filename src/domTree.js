@@ -80,6 +80,32 @@ const toNode = function(tagName: string): HTMLElement {
         node.appendChild(this.children[i].toNode());
     }
 
+    if (this.classes.includes("dspace")) {
+        console.log("detect dspace element");
+        // node.onload=(ev)=>{
+
+        // };
+        node.addEventListener("mousedown",(ev)=>{
+            console.log("load.");
+            if(ev.target.size==null){ev.target.size=parseFloat(ev.target.style.width);}
+            const dT=10.0,fullT=300.0;
+            for(let t=0.0;t<=fullT;t+=dT){
+                let pc=t/fullT;
+                console.log("set timeout pc=",pc);
+                setTimeout(() => {
+                    ev.target.style.width=(ev.target.size*pc).toString()+"em";
+                }, t);
+            }
+        });
+        // node.addEventListener("mousemove", (ev) => {
+        //     if(ev.target.size==null){ev.target.size=parseFloat(ev.target.style.width);ev.target.perc=1.0;}
+        //     if(ev.target.perc>0)ev.target.perc=ev.target.perc-0.01;
+        //     ev.target.style.width=(ev.target.size*ev.target.perc).toString()+"em";
+        //     // ev.target.style.width="0.5em";
+        //     console.log("dspace: move:",(ev.target.size*ev.target.perc).toString()+"em");
+        // });
+    }
+
     return node;
 };
 

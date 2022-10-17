@@ -630,6 +630,16 @@ const makeGlue = (measurement: Measurement, options: Options): DomSpan => {
     return rule;
 };
 
+const makeDspace = (measurement: Measurement, options: Options): DomSpan => {
+    // Make an empty span for the space
+    const rule = makeSpan(["mspace"], [], options);
+    const size = calculateSize(measurement, options);
+    rule.style.height = makeEm(size);
+    rule.style.width = makeEm(size);
+    rule.classes.push("dspace");
+    return rule;
+};
+
 // Takes font options, and returns the appropriate fontLookup name
 const retrieveTextFontName = function(
     fontFamily: string,
@@ -774,4 +784,5 @@ export default {
     staticSvg,
     svgData,
     tryCombineChars,
+    makeDspace,
 };

@@ -113,5 +113,6 @@ function init() {
 }
 
 init();
+// katex.dragTest();
 
 export default katex;

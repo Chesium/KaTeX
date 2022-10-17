@@ -321,7 +321,7 @@ const encloseSpan = function(
     let img;
     const totalHeight = inner.height + inner.depth + topPad + bottomPad;
 
-    if (/fbox|color|angl/.test(label)) {
+    if (/vbox|fbox|color|angl/.test(label)) {
         img = buildCommon.makeSpan(["stretchy", label], [], options);
 
         if (label === "fbox") {

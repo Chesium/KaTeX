@@ -42,7 +42,7 @@ const parseTree = function(toParse: string, settings: Settings): AnyParseNode[] 
             tag: parser.subparse([new Token("\\df@tag")]),
         }];
     }
-
+    console.log("tree:",tree);
     return tree;
 };
 

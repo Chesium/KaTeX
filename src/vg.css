@@ -1,0 +1,16 @@
+.vg {
+  z-index: 999 !important; 
+}
+.vg:hover {
+    border-style: solid;
+    border-radius: 10%;
+    border-width: 0.05em;
+    border-color: black;
+}
+
+/* .mord {
+    border-radius: 10%;
+    border-width: 0.2em;
+    border-color: black;
+    background-color: aquamarine;
+} */

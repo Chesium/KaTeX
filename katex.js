@@ -30,6 +30,7 @@ import type {DomSpan} from "./src/domTree";
 import {defineSymbol} from './src/symbols';
 import defineMacro from './src/defineMacro';
 import {setFontMetrics} from './src/fontMetrics';
+import {dragTest} from "./src/drag/dragtest";
 
 declare var __VERSION__: string;
 
@@ -215,4 +216,5 @@ export default {
         PathNode,
         LineNode,
     },
+    dragTest,
 };

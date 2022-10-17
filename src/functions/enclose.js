@@ -102,6 +102,9 @@ const htmlBuilder = (group, options) => {
         }
 
         img = stretchy.encloseSpan(inner, label, topPad, bottomPad, options);
+        if(/vbox/.test(label)){
+            img.classes.push("vg");
+        }
         if (/fbox|boxed|fcolorbox/.test(label)) {
             img.style.borderStyle = "solid";
             img.style.borderWidth = makeEm(ruleThickness);
@@ -280,6 +283,26 @@ defineFunction({
             type: "enclose",
             mode: parser.mode,
             label: "\\fbox",
+            body: args[0],
+        };
+    },
+});
+
+
+
+defineFunction({
+    type: "enclose",
+    names: ["\\vbox"],
+    props: {
+        numArgs: 1,
+        argTypes: ["hbox"],
+        allowedInText: true,
+    },
+    handler({parser}, args) {
+        return {
+            type: "enclose",
+            mode: parser.mode,
+            label: "\\vbox",
             body: args[0],
         };
     },

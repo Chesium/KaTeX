@@ -9,7 +9,7 @@ import Style from "./Style";
 import type {AnyParseNode} from "./parseNode";
 import type {DomSpan} from "./domTree";
 
-const optionsFromSettings = function(settings: Settings) {
+export const optionsFromSettings = function(settings: Settings) {
     return new Options({
         style: (settings.displayMode ? Style.DISPLAY : Style.TEXT),
         maxSize: settings.maxSize,
@@ -17,7 +17,7 @@ const optionsFromSettings = function(settings: Settings) {
     });
 };
 
-const displayWrap = function(node: DomSpan, settings: Settings): DomSpan {
+export const displayWrap = function(node: DomSpan, settings: Settings): DomSpan {
     if (settings.displayMode) {
         const classes = ["katex-display"];
         if (settings.leqno) {
